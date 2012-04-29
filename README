@@ -1,0 +1,54 @@
+Hierarchical Latent Dirichlet Allocation (HLDA)
+
+URL: http://code.google.com/p/hlda-cpp/
+License: Apache 2.0
+
+This is a C++ re-implementation of David Blei's Hierarchical Latent Dirichlet 
+Allocation (HLDA) topic modeling software.
+The model finds a hierarchy of topics, where the data determines the structure 
+of the hierarchy. The depth of the hierarchy is fixed.
+
+The HLDA model is described in two of David Blei's papers:
+http://www.cs.princeton.edu/~blei/papers/BleiGriffithsJordanTenenbaum2003.pdf
+http://www.cs.princeton.edu/~blei/papers/BleiGriffithsJordan2009a.pdf
+
+David Blei's implementation of HLDA in C:
+http://www.cs.princeton.edu/~blei/downloads/hlda-c.tgz
+
+Dependencies:
+This code depends on the GSL GNU Scientific Library:
+http://www.gnu.org/software/gsl/
+
+Input:
+The input is in the following format:
+[number of unique words] [word id] : [count] ...
+There is a sample test file in the testdata directory, along with a settings 
+file for this test data.
+
+Other corpora in the same format can be found here:
+* the Associated Press corpus: 
+http://www.cs.princeton.edu/~blei/lda-c/ap.tgz
+* Journal of the ACM corpus: 
+http://www.cs.princeton.edu/~blei/downloads/jacm.tgz 
+
+Instructions to run the code:
+* Compile the code by running make
+* ./hlda input_corpus settings_file
+
+input_corpus: the input file, in the format described under "Input".
+settings_file: a settings file. An example settings file can be found in the 
+testdata directory. 
+
+HLDA settings file:
+
+DEPTH the maximum depth of the hierarchy.
+ETA represents the expected variance of the underlying topics.
+GAM not used in this implementation.
+GEM_MEAN a parameter of the GEM distribution. It shows the proportion 
+of general words relative to specific words.
+GEM_SCALE a parameter of the GEM distribution. It shows how strictly 
+documents should follow the general versus specific word proportions.
+SCALING_SHAPE scaling parameter for the G prior.
+SCALING_SCALE scaling parameter for the G prior.
+SAMPLE_ETA if the ETA parameter is sampled.
+SAMPLE_GEM if the GEM parameters are sampled.
