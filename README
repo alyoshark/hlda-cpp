@@ -52,3 +52,6 @@ SCALING_SHAPE scaling parameter for the G prior.
 SCALING_SCALE scaling parameter for the G prior.
 SAMPLE_ETA if the ETA parameter is sampled.
 SAMPLE_GEM if the GEM parameters are sampled.
+
+This work was done in the context of the RENDER project
+(http://www.render-project.eu/).
